@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import API from "./Components/API"; // Adjust the path if needed
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Curd } from "./Components/Curd";
 
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/api" element={<API />} />
+          <Route path="/curd" element={<Curd/>} />
         </Routes>
       </Router>
     </div>
