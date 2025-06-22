@@ -15,7 +15,12 @@ export const Curd = () => {
         }
     }
 
+    const handleDelete=(index)=>{
+      const updatedItem=items.filter((_,i)=>i!==index);
+      setItems(updatedItem)
+    }
 
+    
 
   return (
     <div>
@@ -38,12 +43,24 @@ export const Curd = () => {
       <div className="container">
         <div className="row mt-5">
           <div className="col-12">
-            <ul>
-                {items.map((item,index)=>(
-                    <li key={index}>{item}</li>
+            {items.length > 0 && (
+              <ul className="list-group">
+                {items.map((item, index) => (
+                  <li
+                    key={index}
+                    className="list-group-item d-flex justify-content-between align-items-center"
+                  >
+                    {item}
+                    <button
+                      onClick={() => handleDelete(index)}
+                      className="btn btn-danger btn-sm"
+                    >
+                      Delete
+                    </button>
+                  </li>
                 ))}
-              
-            </ul>
+              </ul>
+            )}
           </div>
         </div>
       </div>
