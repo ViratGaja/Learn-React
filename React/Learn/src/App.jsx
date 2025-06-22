@@ -1,8 +1,9 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, Form } from "react-router-dom";
 import API from "./Components/API"; // Adjust the path if needed
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Curd } from "./Components/Curd";
+import { DataForm } from "./Components/DataForm";
 
 
 const App = () => {
@@ -20,12 +21,17 @@ const App = () => {
             <li className="nav-item">
               <Link to="/curd" className="nav-link">CRUD Component</Link>
             </li>
+            <li className="nav-item">
+              <Link to="/form" className="nav-link">Form</Link>
+            </li> 
           </ul>
         </nav>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/api" element={<API />} />
           <Route path="/curd" element={<Curd/>} />
+          <Route path="/form" element={<DataForm/>} />
+          
         </Routes>
       </Router>
     </div>
